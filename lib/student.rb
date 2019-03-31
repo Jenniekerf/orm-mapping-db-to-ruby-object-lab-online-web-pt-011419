@@ -96,7 +96,7 @@ def self.all_students_in_grade_X(grade)
 end
 
 def self.first_X_students_in_grade_10(number)
-  DB[:conn].execute("SELECT * FROM students WHERE grade = 10, ?;", number")
+  DB[:conn].execute("SELECT * FROM students WHERE grade = 10 LIMIT ?;", number")
 
 end
 
