@@ -44,7 +44,6 @@ class Student
       SELECT *
       FROM students
       WHERE name = ?
-      LIMIT 1
     SQL
  
     DB[:conn].execute(sql, name).map do |row|
@@ -66,8 +65,8 @@ def self.all_students_in_grade_9
   SQL
   
   DB[:conn].execute(sql).map do |row|
-      self.new_from_db(row)
-    end
+    self.new_from_db(row)
+   end 
 end
 
 def self.students_below_12th_grade
